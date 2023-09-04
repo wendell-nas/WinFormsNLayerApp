@@ -1,4 +1,4 @@
-﻿namespace Database
+﻿namespace Negocio
 {
     public class Class1
     {
