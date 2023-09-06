@@ -1,4 +1,4 @@
-using WinFormsApp.Telas.Cliente;
+using WinFormsApp.Telas.Clientes;
 
 namespace WinFormsApp
 {

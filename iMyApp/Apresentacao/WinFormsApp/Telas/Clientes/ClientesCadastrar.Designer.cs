@@ -32,7 +32,7 @@
             label1 = new Label();
             label2 = new Label();
             dtpNascimento = new DateTimePicker();
-            txtNomeConpleto = new TextBox();
+            txtNomeCompleto = new TextBox();
             txtCpf = new TextBox();
             label3 = new Label();
             txtTelefone = new TextBox();
@@ -43,6 +43,7 @@
             label6 = new Label();
             cmbBolsaEstudos = new ComboBox();
             vhkResponsável = new CheckBox();
+            btnSalvar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -73,12 +74,12 @@
             dtpNascimento.Size = new Size(114, 23);
             dtpNascimento.TabIndex = 2;
             // 
-            // txtNomeConpleto
+            // txtNomeCompleto
             // 
-            txtNomeConpleto.Location = new Point(146, 45);
-            txtNomeConpleto.Name = "txtNomeConpleto";
-            txtNomeConpleto.Size = new Size(245, 23);
-            txtNomeConpleto.TabIndex = 3;
+            txtNomeCompleto.Location = new Point(146, 45);
+            txtNomeCompleto.Name = "txtNomeCompleto";
+            txtNomeCompleto.Size = new Size(245, 23);
+            txtNomeCompleto.TabIndex = 3;
             // 
             // txtCpf
             // 
@@ -166,12 +167,23 @@
             vhkResponsável.Text = "Cliente é o responsável legal?";
             vhkResponsável.UseVisualStyleBackColor = true;
             // 
-            // ClienteCadastrar
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(407, 303);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(75, 23);
+            btnSalvar.TabIndex = 13;
+            btnSalvar.Text = "button1";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // ClientesCadastrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(567, 356);
+            Controls.Add(btnSalvar);
             Controls.Add(vhkResponsável);
             Controls.Add(cmbBolsaEstudos);
             Controls.Add(label6);
@@ -182,12 +194,12 @@
             Controls.Add(label4);
             Controls.Add(txtCpf);
             Controls.Add(label3);
-            Controls.Add(txtNomeConpleto);
+            Controls.Add(txtNomeCompleto);
             Controls.Add(dtpNascimento);
             Controls.Add(label2);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "ClienteCadastrar";
+            Name = "ClientesCadastrar";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Cliente";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -200,7 +212,7 @@
         private Label label1;
         private Label label2;
         private DateTimePicker dtpNascimento;
-        private TextBox txtNomeConpleto;
+        private TextBox txtNomeCompleto;
         private TextBox txtCpf;
         private Label label3;
         private TextBox txtTelefone;
@@ -211,5 +223,6 @@
         private Label label6;
         private ComboBox cmbBolsaEstudos;
         private CheckBox vhkResponsável;
+        private Button btnSalvar;
     }
 }

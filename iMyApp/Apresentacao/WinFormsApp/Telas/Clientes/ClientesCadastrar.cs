@@ -20,11 +20,24 @@ namespace WinFormsApp.Telas.Clientes
             InitializeComponent();
 
             var cliente = new Cliente();
-            
+
             var colaborador = new Colaborador();
 
         }
 
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            var cliente = new Cliente
+            {
+                Cpf = txtCpf.Text,
+                Nome = txtNomeCompleto.Text,
+                Nascimento = Convert.ToDateTime(cmbBolsaEstudos.Text),
+                Telefone = txtTelefone.Text,
+                Email = txtEmail.Text,
+            };
 
+           
+
+        }
     }
 }
