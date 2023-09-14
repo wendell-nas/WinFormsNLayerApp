@@ -11,5 +11,16 @@ namespace Negocio.Entidades
     {   
         public string Nome { get; set; }
         public bool Status { get; set; }
+        public Cargo(string nome, bool status) 
+        {
+            Nome = nome;
+            Status = status;
+
+            CriadoPor = "Wendell";
+            CriadoEm = DateTime.Now;
+
+            AlteradoPor = "Wendell";
+            AlteradoEm = DateTime.Now;
+        }
     }
 }
