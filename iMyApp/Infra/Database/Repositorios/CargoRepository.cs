@@ -1,13 +1,7 @@
 ﻿using Database.Conexoes;
 using Negocio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Net.NetworkInformation;
+using System.Data.SqlClient;
 
 namespace Database.Repositorios
 {
