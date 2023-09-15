@@ -14,6 +14,7 @@ namespace WinFormsApp.Telas.Cargos
 {
     public partial class CargoView : Form
     {
+        int id = -1;
         public CargoView()
         {
             InitializeComponent();
@@ -26,23 +27,63 @@ namespace WinFormsApp.Telas.Cargos
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            var nome = txtCargo.Text;
-            var status = chkStatus.Checked;
-
-            var novoCargo = new Cargo(nome, status);
-
+            var novoCargo = new Cargo(txtCargo.Text, chkStatus.Checked);
             var cargoRepository = new CargoRepository();
-
-            var resultado = cargoRepository.Inserir(novoCargo);
-
-            if(resultado)
+            if (id > 0)
             {
-                MessageBox.Show("Cargo cadastrado com sucesso!");
+
+                var atualizarCargo = new CargoRepository();
+                atualizarCargo.Atualizar(novoCargo, id);
+                MessageBox.Show("Cargo atualizado com sucesso");
             }
             else
             {
-                MessageBox.Show("Não foi possível cadastrar o cargo");
+                var nome = txtCargo.Text;
+                var status = chkStatus.Checked;
+
+
+                var resultado = cargoRepository.Inserir(novoCargo);
+
+                txtCargo.Text = novoCargo.CriadoPor;
+
+                if (resultado)
+                {
+
+                    MessageBox.Show("Cargo cadastrado com sucesso!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível cadastrar o cargo");
+                }
+
             }
         }
+
+        private void CargoView_Load(object sender, EventArgs e)
+        {
+            var cargoRepository = new CargoRepository();
+            var dataTable = cargoRepository.ObterTodos();
+            gvCargos.DataSource = dataTable;
+        }
+
+        private void btnRecarregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gvCargos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                groupBoxCargo.Show();
+                DataGridViewRow row = gvCargos.Rows[e.RowIndex];
+                txtCargo.Text = row.Cells[1].Value.ToString();
+                chkStatus.Checked = Convert.ToBoolean(row.Cells[2].Value.ToString());
+
+
+                id = Convert.ToInt32(row.Cells[0].Value);
+            }
+        }   
     }
 }

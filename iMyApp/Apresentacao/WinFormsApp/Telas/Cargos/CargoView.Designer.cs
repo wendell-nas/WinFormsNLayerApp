@@ -52,7 +52,7 @@
             // chkStatus
             // 
             chkStatus.AutoSize = true;
-            chkStatus.Location = new Point(463, 35);
+            chkStatus.Location = new Point(518, 37);
             chkStatus.Name = "chkStatus";
             chkStatus.Size = new Size(89, 19);
             chkStatus.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             btnSalvar.BackColor = Color.White;
             btnSalvar.FlatStyle = FlatStyle.Flat;
-            btnSalvar.Location = new Point(576, 30);
+            btnSalvar.Location = new Point(647, 30);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(90, 26);
             btnSalvar.TabIndex = 2;
@@ -80,7 +80,7 @@
             groupBoxCargo.FlatStyle = FlatStyle.System;
             groupBoxCargo.Location = new Point(12, 57);
             groupBoxCargo.Name = "groupBoxCargo";
-            groupBoxCargo.Size = new Size(672, 78);
+            groupBoxCargo.Size = new Size(743, 78);
             groupBoxCargo.TabIndex = 3;
             groupBoxCargo.TabStop = false;
             groupBoxCargo.Text = "Novo Cargo";
@@ -101,23 +101,27 @@
             // 
             btnRecarregar.BackColor = Color.White;
             btnRecarregar.FlatStyle = FlatStyle.Flat;
-            btnRecarregar.Location = new Point(588, 141);
+            btnRecarregar.Location = new Point(665, 144);
             btnRecarregar.Name = "btnRecarregar";
             btnRecarregar.Size = new Size(90, 27);
             btnRecarregar.TabIndex = 5;
             btnRecarregar.Text = "Recarregar";
             btnRecarregar.UseVisualStyleBackColor = false;
+            btnRecarregar.Click += btnRecarregar_Click;
             // 
             // gvCargos
             // 
+            gvCargos.AllowUserToAddRows = false;
             gvCargos.BackgroundColor = SystemColors.GradientActiveCaption;
             gvCargos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gvCargos.Enabled = false;
-            gvCargos.Location = new Point(6, 174);
+            gvCargos.Location = new Point(6, 177);
             gvCargos.Name = "gvCargos";
+            gvCargos.ReadOnly = true;
             gvCargos.RowTemplate.Height = 25;
-            gvCargos.Size = new Size(678, 315);
+            gvCargos.Size = new Size(749, 315);
             gvCargos.TabIndex = 6;
+            gvCargos.CellMouseClick += gvCargos_CellMouseClick;
             // 
             // label1
             // 
@@ -133,7 +137,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(692, 501);
+            ClientSize = new Size(767, 501);
             Controls.Add(label1);
             Controls.Add(gvCargos);
             Controls.Add(btnRecarregar);
@@ -143,6 +147,7 @@
             Name = "CargoView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cargo View";
+            Load += CargoView_Load;
             groupBoxCargo.ResumeLayout(false);
             groupBoxCargo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gvCargos).EndInit();

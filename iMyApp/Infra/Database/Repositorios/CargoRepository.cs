@@ -1,7 +1,13 @@
 ﻿using Database.Conexoes;
 using Negocio.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Data.SqlClient;
+using System.Net.NetworkInformation;
 
 namespace Database.Repositorios
 {
@@ -24,12 +30,12 @@ namespace Database.Repositorios
                        @criadoEm, 
                        @criadoPor,
                        @alteradoEm,
-                       @alteradoPor,)";
+                       @alteradoPor)";
                 using (var conncection = new SqlConnection(SqlServer.StrConexaoHardCode()))
                 {
                    conncection.Open();
                     var cmd = new SqlCommand(sql, conncection);
-                    cmd.Parameters.AddWithValue("@nome", cargo.Nome);
+                    cmd.Parameters.AddWithValue("@Nome", cargo.Nome);
                     cmd.Parameters.AddWithValue("@status", cargo.Status);
                     cmd.Parameters.AddWithValue("@criadoEm", cargo.CriadoEm);
                     cmd.Parameters.AddWithValue("@criadoPor", cargo.CriadoPor);
@@ -40,44 +46,43 @@ namespace Database.Repositorios
                     return resposta == 1;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
 
 
             }
-
-            
-
-         
-
-            
-
+                              
         }
-        public bool Atualizar(Cargo cargo)
+        public bool Atualizar(Cargo cargo, int id)
         {
             try
             {
-                var sql = @"";
+                var sql = @"UPDATE [dbo].[Cargo]
+                   SET [Nome] = @nome
+                  ,[Status] = @Status
+                  ,[AlteradoEm] = @AlteradoEm
+                  ,[AlteradoPor] = @AlteradoPor
+                   WHERE Id = @id";
 
                 using (var conncection = new SqlConnection(SqlServer.StrConexaoHardCode()))
                 {
+                    conncection.Open();
                     var cmd = new SqlCommand(sql, conncection);
+                    cmd.Parameters.AddWithValue("@id", cargo.Id);
                     cmd.Parameters.AddWithValue("@nome", cargo.Nome);
-                    cmd.Parameters.AddWithValue("@status", cargo.Status);
-                    cmd.Parameters.AddWithValue("@criadoEm", cargo.CriadoEm);
-                    cmd.Parameters.AddWithValue("@criadoPor", cargo.CriadoPor);
-                    cmd.Parameters.AddWithValue("@alteradoEm", cargo.AlteradoEm);
-                    cmd.Parameters.AddWithValue("@alteradoPor", cargo.AlteradoPor);
+                    cmd.Parameters.AddWithValue("@Status", cargo.Status);
+                    cmd.Parameters.AddWithValue("@AlteradoEm", cargo.AlteradoEm);
+                    cmd.Parameters.AddWithValue("@AlteradoPor", cargo.AlteradoPor);
                     var resposta = cmd.ExecuteNonQuery();
                     return resposta == 1;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
 
 
             }
@@ -97,17 +102,17 @@ namespace Database.Repositorios
                     return resposta == 1;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
 
 
             }
         }
-        public DataTable ObterTodos(int cargoId)
+        public DataTable ObterTodos()
         {
-            var sql = @"";
+            var sql = @"SELECT [Id],[Nome],[Status],[AlteradoEm] FROM [dbo].[Cargo]";
 
             SqlDataAdapter dataAdapter = null;
             var dataTable = new DataTable();
@@ -126,10 +131,10 @@ namespace Database.Repositorios
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                throw;
             }
            
 
