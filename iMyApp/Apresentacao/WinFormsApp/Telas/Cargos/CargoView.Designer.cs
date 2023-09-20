@@ -69,7 +69,7 @@
             btnSalvar.TabIndex = 2;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = false;
-            btnSalvar.Click += btnSalvar_Click;
+    
             // 
             // groupBoxCargo
             // 

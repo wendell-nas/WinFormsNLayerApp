@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio.Entidades.Comum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,30 @@ using System.Threading.Tasks;
 
 namespace Negocio.Entidades
 {
-    public class Colaborador
+    public class Colaborador : Pessoa
     {
-        public Colaborador(string nome, string cpf, DateTime nascimento, string email, bool status, DateTime criadoEm, string criadoPor)
+        public string Cargo { get; set; }
+        public string Departamento { get; set; }
+        public DateTime Admissao { get; set; }
+
+        public Colaborador(string cargo, string departamento, string nome, string cpf, string rg, DateTime nascimento, bool Status, string Telefone, string Genero)
         {
-            nome = Nome;
-            cpf = Cpf;
-            nascimento = Nascimento;
-            email = Email;
-            status = Status;
-            criadoEm = CriadoEm;
-            criadoPor = CriadoPor;
+            Cargo = cargo;
+            Departamento = departamento;
+            Nome = nome;
+            Admissao = DateTime.Now;
+            Cpf = cpf;
+
+            CriadoEm = DateTime.Now;
+            CriadoPor = nome;
+
+            AlteradoEm = DateTime.Now;
+            AlteradoPor = nome;
+
+        }
+
+        public Colaborador()
+        {
         }
     }
 }

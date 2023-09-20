@@ -24,7 +24,7 @@ namespace WinFormsApp.Telas.Cargos
 
         private void btnNovoCargo_Click(object sender, EventArgs e)
         {
-            grupoBoxCargo.Visible = !grupoBoxCargo.Visible;
+            groupBoxCargo.Visible = !groupBoxCargo.Visible;
         }
 
         private void tbnSalvar_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace WinFormsApp.Telas.Cargos
 
             if (e.RowIndex >= 0)
             {
-                grupoBoxCargo.Show();
+                groupBoxCargo.Show();
                 txtCargo.Text = row.Cells[2].Value.ToString();
                 chkStatus.Checked = Convert.ToBoolean(row.Cells[3].Value.ToString());
 

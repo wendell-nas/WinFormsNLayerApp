@@ -11,8 +11,26 @@ using System.Threading.Tasks;
 
 namespace Database.Repositorios
 {
+    /// <summary>
+    /// <c>CargoRepository</c> - Executa comandos SQL (CRUD) na tabela de [dbo].[Cargo]
+    /// <example>Exemplo:
+    ///     var repositorio = new CargoRepository();
+    /// </example>
+    /// </summary>
     public class CargoRepository
     {
+        /// <summary>
+        /// Insere um novo registro na tabela Cargo
+        /// <exemple>Exemplo:
+        /// <code>
+        ///     var cargoRepositorio = new CargoRepository();
+        ///     var cargo = Cargo("Nome", "Status");
+        ///     var resultado = cargoRepositorio.Inserir(cargo);
+        ///     </code>
+        /// </exemple>
+        /// </summary>
+        /// <param name="cargo">Entidade->Cargo</param>
+        /// <returns>true ou false</returns>
         public bool Inserir(Cargo cargo)
         {
             try
@@ -35,7 +53,7 @@ namespace Database.Repositorios
                  @AlteradoPor,
                  @AlteradoEm)";
 
-                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCore()))
+                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCode()))
                 {
                     connection.Open();
                     var cmd = new SqlCommand(sql, connection);
@@ -75,7 +93,7 @@ namespace Database.Repositorios
                   ,[AlteradoPor] = @AlteradoPor
                    WHERE Id = @id";
 
-                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCore()))
+                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCode()))
                 {
                     connection.Open();
                     var cmd = new SqlCommand(sql, connection);
@@ -108,7 +126,7 @@ namespace Database.Repositorios
                             DELETE FROM[dbo].[Cargo]
                             WHERE Id = @id";
 
-                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCore()))
+                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCode()))
                 {
                     connection.Open();
                     var cmd = new SqlCommand(sql, connection);
@@ -134,7 +152,7 @@ namespace Database.Repositorios
             var dataTable = new DataTable();
             try
             {
-                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCore()))
+                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCode()))
                 {
                     connection.Open();
                     var cmd = connection.CreateCommand();
@@ -150,9 +168,9 @@ namespace Database.Repositorios
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw ;
             }
 
             //      SELECT[Id]
@@ -171,7 +189,7 @@ namespace Database.Repositorios
 
             try
             {
-                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCore()))
+                using (var connection = new SqlConnection(SqlServer.StrConexaoHardCode()))
                 {
                     connection.Open();
                     SqlCommand com = new SqlCommand(sql, connection);

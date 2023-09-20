@@ -109,5 +109,55 @@ namespace WinFormsApp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feche_a_mao_segurando_o_smartphone {
+            get {
+                object obj = ResourceManager.GetObject("feche-a-mao-segurando-o-smartphone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundo_abstrato_com_design_baixo_poli {
+            get {
+                object obj = ResourceManager.GetObject("fundo-abstrato-com-design-baixo-poli", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gettyimages_1442799465_640x640 {
+            get {
+                object obj = ResourceManager.GetObject("gettyimages-1442799465-640x640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap homem_tiro_medio_usando_oculos_vr {
+            get {
+                object obj = ResourceManager.GetObject("homem-tiro-medio-usando-oculos-vr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rede_de_mulher_de_negocios_usando_dispositivos_digitais {
+            get {
+                object obj = ResourceManager.GetObject("rede-de-mulher-de-negocios-usando-dispositivos-digitais", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
