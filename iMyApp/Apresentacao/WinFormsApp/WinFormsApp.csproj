@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ChrisKaczor.Wpf.Windows.ControlBox" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Aplicacao\Negocio\Negocio.csproj" />
     <ProjectReference Include="..\..\Infra\Database\Database.csproj" />
   </ItemGroup>

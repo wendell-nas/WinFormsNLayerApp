@@ -18,7 +18,7 @@ namespace WinFormsApp
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new MDIPrincipal());
+                Application.Run(new ScreenMenu());
             }
             catch (Exception ex)
             {
