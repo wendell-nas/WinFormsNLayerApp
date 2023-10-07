@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Negocio.Entidades.Comum;
 
 namespace Negocio.Entidades
 {
-    public class Colaborador
+    public class Colaborador : Pessoa
     {
     }
 }

@@ -1,14 +1,9 @@
 ﻿using Negocio.Entidades.Comum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Entidades
 {
-    //cliente herda os dados de pessoa
-    public class Cliente : Pessoa
+    //Cliente herda os dados de Pessoa
+    public class Cliente : Pessoa, EntidadeBase
     {
         public DateTime Nascimento { get; set; }
     }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Negocio.Validators
 {
-    internal class CpfValidator
+    public class CpfValidator
     {
+
     }
 }
